@@ -79,11 +79,11 @@ var devConfig = {
       'api': path.resolve(__dirname, 'api/server')
     }
   },
-  
+
   externals: [
     resolveExternals
   ],
-  
+
   module: {
     loaders: [
       {
@@ -132,7 +132,7 @@ var prodConfig = {
       'api': path.resolve(__dirname, 'api/server')
     }
   },
-  
+
   externals: [
     resolveExternals
   ],
@@ -165,11 +165,11 @@ function resolveExternals(context, request, callback) {
   return resolveMeteor(request, callback) ||
     callback();
 }
- 
+
 function resolveMeteor(request, callback) {
   var match = request.match(/^meteor\/(.+)$/);
   var pack = match && match[1];
- 
+
   if (pack) {
     callback(null, 'Package["' + pack + '"]');
     return true;
@@ -180,4 +180,3 @@ module.exports = {
   dev: devConfig,
   prod: prodConfig
 }
-
