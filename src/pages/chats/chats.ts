@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
 import * as moment from 'moment';
-import { Chat, MessageType } from '../../models';
- 
+import { Chat, MessageType } from 'api/models';
+
 @Component({
   templateUrl: 'chats.html'
 })
